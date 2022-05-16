@@ -19,12 +19,12 @@ df = df.join(geom)
 df.fillna('', inplace=True)
 df.drop(["Refurbished in 2013", "Refurbishment status", "Email", "Telephone", "Location"], axis=1, inplace=True)
 
-# Data cleaning
+# table with the full dataset
+st.write("Scroll through the full table below")
+st.write(df)
 
-
-
+# allowing for filtering of dataset by pulldown options
 st.sidebar.markdown('### Data Filters')
-
 charge = list(df['Charge'].drop_duplicates())
 charge_choice = st.sidebar.multiselect('Select if there is a cost:', charge)
 facilities = list(df["Facilities"].drop_duplicates())
@@ -35,7 +35,6 @@ facilities_choice = st.sidebar.multiselect('Select by available facilities:', fa
 df = df[df['Charge'].isin(charge_choice)]
 df = df[df['Facilities'].isin(facilities_choice)]
 # df = df[df['Opening times'].isin(hours_choice)]
-
+st.write("Use the filtering options on the panel to the left and find the results below")
 st.write(df)
-
 st.map(df)
