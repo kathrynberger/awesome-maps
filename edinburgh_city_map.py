@@ -36,7 +36,7 @@ df.fillna('No additional services', inplace=True)
 df.drop(["Refurbished in 2013", "Refurbishment status", "Email", "Telephone", "Location"], axis=1, inplace=True)
 
 # table with the full dataset
-st.write("Scroll through the full table below for the full list and use the filters on the left-hand panel to filter based on your needs")
+st.write("Scroll through the full table below for the full list and use the filters on the left-hand panel to filter based on your needs.")
 st.write(df)
 
 # use Streamlit's side bar options to allow for filtering of dataset by pulldown options
