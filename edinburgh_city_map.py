@@ -1,8 +1,8 @@
-from turtle import width
 import pandas as pd
 import streamlit as st
 import pydeck as pdk
 from PIL import Image
+
 
 st.title("Where to Go When You've 'Got to Go' in the City of Edinburgh")
 
@@ -20,7 +20,7 @@ with col3:
 
 # use st.write() to easily enter text and hyperlinks
 st.write("Use this app to identify the nearest washroom. Keep in mind, however, this data was last updated in 2015...so you may be out of luck!")
-st.write("[Data source](https://github.com/edinburghcouncil/datasets/blob/master/Public%20toilets.csv)")
+st.write("This demo is meant to show how easy it is to develop an interactive geospatial web application with only a few lines of code. Explore the code base to find out how. [Data source](https://github.com/edinburghcouncil/datasets/blob/master/Public%20toilets.csv)")
 
 # Commented lines of code will not be read or visible
 # data source: https://github.com/edinburghcouncil/datasets/blob/master/Public%20toilets.csv
@@ -72,8 +72,8 @@ r =   st.pydeck_chart(pdk.Deck(
         initial_view_state=pdk.ViewState(
             latitude=55.950558,
             longitude=-3.185556,
-            zoom=8,
-            pitch=50
+            zoom=10,
+            pitch=25
         ),
         layers=[
             pdk.Layer(
@@ -82,11 +82,13 @@ r =   st.pydeck_chart(pdk.Deck(
                 get_position='[lon, lat]',
                 auto_highlight=True,
                 pickable=True,
-                opacity=0.6,
+                opacity=0.4,
                 stroked=True,
                 filled=True,
-                get_radius = 10,
-                get_fill_color=[255, 140, 0]
+                radius=200,
+                elevation_scale=0,
+                elevation_range=[0, 10],
+                extruded=True,
             )
         ]
     ))
