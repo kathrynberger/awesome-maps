@@ -1,6 +1,6 @@
 
 # A simple geospatial demo app
-This demo is meant to be a fun way to explore geospatial data and see how easy it is to develop a simple interactive web app with very few lines of code. Explore the commented code base to find out how it was done!
+This simple demo is meant to be a fun way to explore geospatial data and see how easy it is to develop a interactive web application with very few lines of code. Explore the commented code base (edinburgh_city_map.py) to find out how it was done!
 
 # launching the app
 to run streamlit app from terminal:
